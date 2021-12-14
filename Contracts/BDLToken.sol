@@ -10,21 +10,19 @@ contract BDLToken {
     uint private numTokensInCirculation;
     bool private lock;
 
-    uint tokenPrice;    // a uint256 that defines the price of your token in wei; each token can be purchased with tokenPrice wei
+    uint public tokenPrice;    // a uint256 that defines the price of your token in wei; each token can be purchased with tokenPrice wei
   
     event Purchase(address buyer, uint256 amount);  // an event that contains an address and a uint256
     event Transfer(address sender, address receiver, uint256 amount); // an event that contains two addresses and a uint256
     event Sell(address seller, uint256 amount); // an event that contains an address and a uint256
     event Price(uint256 price); // an event that contains a uint256
 
-    mapping(address => uint256) tokenBalances;
-
+    mapping(address => uint256) private tokenBalances;
 
     constructor() {
         owner = msg.sender;
         lock = false;
         contractBalanceOffset = address(this).balance;
-        // TODO should I have some checks here about the address's start balance?
     }
 
     //  protects against cross-functional re-entrancy attacks
