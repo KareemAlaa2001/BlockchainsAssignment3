@@ -21,13 +21,14 @@ contract BDLToken {
 
     constructor() {
         owner = msg.sender;
-        lock = false;
         contractBalanceOffset = address(this).balance;
+        tokenPrice = 1;
+        lock = false;
     }
 
     //  protects against cross-functional re-entrancy attacks
     modifier mutexLock() {
-        require(!lock);
+        require(!lock, "Hello 9-1-1? This dude just tried to pull a DAO - wait what do you mean you don't support decentralised crime?");
         lock = true;
         _;
     }
@@ -38,7 +39,7 @@ contract BDLToken {
     function buyToken(uint256 amount) public payable mutexLock() returns (bool) {
         //  checks
         //  Check message value matches the amount sent
-        require(msg.value == tokenPrice * amount, "Incorrect amount sent!");
+        require(msg.value == tokenPrice * amount, "Check your maths G, u sent the wrong amount");
 
         //  effects
         tokenBalances[msg.sender] += amount;
@@ -53,7 +54,7 @@ contract BDLToken {
     //  a function that transfers amount number of tokens from the account of the transaction’s sender to the recipient; 
     //  if the transfer is successful, the function returns a boolean value (true) and emits an event Transfer, with the sender’s and receiver’s addresses and the transferred amount
     function transfer(address recipient, uint256 amount) public mutexLock() returns (bool) {
-        require(tokenBalances[msg.sender] >= amount, "Insufficient funds to make this transfer!");
+        require(tokenBalances[msg.sender] >= amount, "HAHA you're broke!");
 
         tokenBalances[msg.sender] -= amount;
         tokenBalances[recipient] += amount;
@@ -85,8 +86,8 @@ contract BDLToken {
     //  (Note: make sure that, whenever the price changes, the contract’s funds suffice so that all tokens can be sold for the updated price)
     function changePrice(uint256 price) public mutexLock() returns (bool) {
         //  require message sender to be conract creator
-        require(msg.sender == owner);
-        require(numTokensInCirculation * price > contractBalance());
+        require(msg.sender == owner, "I've never seen this man before in my life");
+        require(numTokensInCirculation * price > contractBalance(), "Who do you think you are, the federal reserve?!");
 
         tokenPrice = price;
 
