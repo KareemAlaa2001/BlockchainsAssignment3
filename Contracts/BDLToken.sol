@@ -101,6 +101,7 @@ contract BDLToken {
         return tokenBalances[msg.sender];
     }
 
+    //  gets the current balance of the contract while keeping the start offset in mind
     function contractBalance() private view returns (uint) {
         return address(this).balance - contractBalanceOffset;
     }
