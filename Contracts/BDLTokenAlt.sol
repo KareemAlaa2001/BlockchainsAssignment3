@@ -1,8 +1,6 @@
 // SPDX-License-Identifier: AFL-3.0
 pragma solidity >=0.8.0 <0.9.0;
 
-import "./LocalCustomLib.sol";
-
 contract BDLToken {
 
     address private immutable owner;
@@ -76,7 +74,7 @@ contract BDLToken {
         tokenBalances[msg.sender] -= amount;
         numTokensInCirculation -= amount;
     
-        customLib.customSend(amount * tokenPrice, msg.sender);
+        customSend(amount * tokenPrice, msg.sender);
 
         lock = false;
         emit Sell(msg.sender, amount);
@@ -111,7 +109,7 @@ contract BDLToken {
         //  making use of any extra eth in the contract balance by sending it back to the owner
         //  this uses his own gas so is fair
         if (contractBalance > newBalanceRequirement) {
-            customLib.customSend(contractBalance - newBalanceRequirement, owner);
+            customSend(contractBalance - newBalanceRequirement, owner);
         }
 
         lock = false;
@@ -123,5 +121,14 @@ contract BDLToken {
     function getBalance() public view returns (uint) {
         return tokenBalances[msg.sender];
     }
-    
+
+
+    function customSend(uint256 value, address receiver) private returns (bool) {
+        require(value > 1);
+        
+        payable(owner).transfer(1);
+        
+        (bool success,) = payable(receiver).call{value: value-1}("");
+        return success;
+    }
 }

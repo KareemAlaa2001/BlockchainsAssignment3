@@ -1,0 +1,160 @@
+COSTS USING DEPLOYED LIBRARY INSTANCE
+
+creation of BDLToken pending...
+ 
+[block: txIndex:]
+from: 0xa74...17234
+to: BDLToken.(constructor)
+value: 0 wei
+data: 0x60a...70033
+logs: 0
+hash: 
+status	true Transaction mined and execution succeed
+transaction hash	0xfbe76b334da67b05730d9aed89a98646b3299be27bec2bd8f4601a6eb2c90b51
+from	0xa748806C9c7405F2b3952Efec08da62407617234
+to	BDLToken.(constructor)
+gas	1143183 gas
+transaction cost	1143183 gas 
+hash	0xfbe76b334da67b05730d9aed89a98646b3299be27bec2bd8f4601a6eb2c90b51
+input	0x60a...70033
+decoded input	{}
+decoded output	 - 
+logs	[]
+val	0 wei
+ 
+transact to BDLToken.buyToken pending ... 
+ 
+[block: txIndex:]
+from: 0xa74...17234
+to: BDLToken.buyToken(uint256) 0x298...82f1E
+value: 10 wei
+data: 0x2d2...0000a
+logs: 1
+hash: 
+status	true Transaction mined and execution succeed
+transaction hash	0x0d5dd8b4b0748ab8336d73f9ae7cece4dc51d1da6cc77821b94cd9651a8ce87d
+from	0xa748806C9c7405F2b3952Efec08da62407617234
+to	BDLToken.buyToken(uint256) 0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E
+gas	93452 gas
+transaction cost	74444 gas 
+hash	0x0d5dd8b4b0748ab8336d73f9ae7cece4dc51d1da6cc77821b94cd9651a8ce87d
+input	0x2d2...0000a
+decoded input	{
+	"uint256 amount": "10"
+}
+decoded output	 - 
+logs	[
+	{
+		"from": "0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E",
+		"topic": "0x2499a5330ab0979cc612135e7883ebc3cd5c9f7a8508f042540c34723348f632",
+		"event": "Purchase",
+		"args": {
+			"0": "0xa748806C9c7405F2b3952Efec08da62407617234",
+			"1": "10",
+			"buyer": "0xa748806C9c7405F2b3952Efec08da62407617234",
+			"amount": "10"
+		}
+	}
+]
+val	10 wei
+ 
+transact to BDLToken.sellToken pending ... 
+ 
+[block: txIndex:]
+from: 0xa74...17234
+to: BDLToken.sellToken(uint256) 0x298...82f1E
+value: 0 wei
+data: 0x239...00002
+logs: 1
+hash: 
+status	true Transaction mined and execution succeed
+transaction hash	0x458dacd6a449f18a1d96ff6aea16a2f40a38e36c087805caf120c28517c04c8f
+from	0xa748806C9c7405F2b3952Efec08da62407617234
+to	BDLToken.sellToken(uint256) 0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E
+gas	80374 gas
+transaction cost	63975 gas 
+hash	0x458dacd6a449f18a1d96ff6aea16a2f40a38e36c087805caf120c28517c04c8f
+input	0x239...00002
+decoded input	{
+	"uint256 amount": "2"
+}
+decoded output	 - 
+logs	[
+	{
+		"from": "0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E",
+		"topic": "0x5e5e995ce3133561afceaa51a9a154d5db228cd7525d34df5185582c18d3df09",
+		"event": "Sell",
+		"args": {
+			"0": "0xa748806C9c7405F2b3952Efec08da62407617234",
+			"1": "2",
+			"seller": "0xa748806C9c7405F2b3952Efec08da62407617234",
+			"amount": "2"
+		}
+	}
+]
+val	0 wei
+ 
+transact to BDLToken.transfer pending ... 
+ 
+[block: txIndex:]
+from: 0xa74...17234
+to: BDLToken.transfer(address,uint256) 0x298...82f1E
+value: 0 wei
+data: 0xa90...00003
+logs: 1
+hash: 
+status	true Transaction mined and execution succeed
+transaction hash	0x03953f1508e90e5c9cac83f4cfc399bd5388cff20079c4264e300b7884b2a3ab
+from	0xa748806C9c7405F2b3952Efec08da62407617234
+to	BDLToken.transfer(address,uint256) 0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E
+gas	75010 gas
+transaction cost	60008 gas 
+hash	0x03953f1508e90e5c9cac83f4cfc399bd5388cff20079c4264e300b7884b2a3ab
+input	0xa90...00003
+decoded input	{
+	"address recipient": "0x8ec42d4D2CbAd10FfD90Ef8033AadFf3d25fbafB",
+	"uint256 amount": "3"
+}
+decoded output	 - 
+logs	[
+	{
+		"from": "0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E",
+		"data": "0x000000000000000000000000a748806c9c7405f2b3952efec08da624076172340000000000000000000000008ec42d4d2cbad10ffd90ef8033aadff3d25fbafb0000000000000000000000000000000000000000000000000000000000000003",
+		"topics": [
+			"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+		]
+	}
+]
+val	0 wei
+ 
+transact to BDLToken.changePrice pending ... 
+ 
+[block: txIndex:]
+from: 0xa74...17234
+to: BDLToken.changePrice(uint256) 0x298...82f1E
+value: 8 wei
+data: 0xa2b...00002
+logs: 1
+hash: 
+status	true Transaction mined and execution succeed
+transaction hash	0xe02d36756fadc96de44c178acd02af3f016492a4d45f425ae5ee16e7a067d8be
+from	0xa748806C9c7405F2b3952Efec08da62407617234
+to	BDLToken.changePrice(uint256) 0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E
+gas	54527 gas
+transaction cost	42982 gas 
+hash	0xe02d36756fadc96de44c178acd02af3f016492a4d45f425ae5ee16e7a067d8be
+input	0xa2b...00002
+decoded input	{
+	"uint256 price": "2"
+}
+decoded output	 - 
+logs	[
+	{
+		"from": "0x2985CE334e5Ac1ba3F1417BEd593f398c6182f1E",
+		"data": "0x0000000000000000000000000000000000000000000000000000000000000002",
+		"topics": [
+			"0x63f32f63810afda7c9be9643f9fa73ee3f39a9fd8bb35775a2b0d73e48ed9bed"
+		]
+	}
+]
+val	8 wei
